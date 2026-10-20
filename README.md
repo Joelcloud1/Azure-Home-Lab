@@ -15,11 +15,13 @@ This lab environment simulates a small production-style Azure setup, covering co
 ### Storage & Disk Management
 - Managed and resized virtual machine disks, including partitioning and expanding storage
 - Configured **Azure Storage Accounts** for file and data storage
+- Copied files into a storage account container with **AzCopy** using a limited-permission SAS token, and separately using my own sign-in (see `azcopy-file-transfer.md`)
 
 ### Networking & Secure Access
 - Configured virtual networking for the lab environment
 - Deployed **Application Gateway** to manage and distribute traffic across virtual machines
 - Configured **Azure Bastion** alongside RDP/SSH for secure remote access to VMs, without exposing public IPs
+- Built an **App Service** restricted to two specific IP addresses using access restrictions, and tested the block from outside the allowed network (see `app-service-ip-restriction.md`)
 
 ### Identity & Access
 - Administered **Microsoft Entra ID** for the lab environment
@@ -58,7 +60,9 @@ azure-home-lab/
 │   ├── monitoring-backup-identity.md  # Monitoring/alerting, Azure Site Recovery, and RBAC
 │   ├── governance-tag-policy.md       # Azure Policy Initiative enforcing required tags
 │   ├── governance-diagnostic-settings.md  # Diagnostic logging policy for storage accounts
-│   └── governance-rg-locks.md         # Custom policy auto-locking resource groups against deletion
+│   ├── governance-rg-locks.md         # Custom policy auto-locking resource groups against deletion
+│   ├── app-service-ip-restriction.md  # App Service locked down to two IP addresses
+│   └── azcopy-file-transfer.md        # Copying files to a storage account with AzCopy
 └── scripts/
     └── powershell/
         └── (automation scripts used in the lab)
